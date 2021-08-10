@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://themyleaf.org" th:replace="~{/layout/index :: dynamic(~{::body})}" lang="en">
+
+<body>
+    <div th:replace="~{/cart/view :: shopping_cart}"></div>
+    <h3 class="cart-title">Thanh toán</h3>
+    <div class="form__checkout">
+        <div class="checkout__detail">
+            <div class="title__user__checkout">
+                <h3 class="title__checkout">Người mua</h3>
+                <div class="user__checkout" id="username">[[${#request.remoteUser}]]</div>
+            </div>
+            <div class="title__date__checkout">
+                <h3 class="title__checkout">Ngày tạo</h3>
+                <span class="user__checkout">{{order.createDate | date : 'dd-MM-yyyy'}}</span>
+            </div>
+        </div>
+        <h3 class="title__checkout" id="title__address">Địa chỉ</h3>
+        <textarea ng-model="order.address" class="address_checkout" name="address" id="address" cols="30" rows="10"
+            placeholder="Nhập địa chỉ của bạn"></textarea>
+
+        <button class="btn btn--primary" ng-click="order.purchase()">Đặt hàng</button>
+    </div>
+</body>
+
+</html>

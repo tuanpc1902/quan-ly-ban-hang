@@ -1,0 +1,21 @@
+<div class="card mt-2">
+    <div class="container mt-2 mb-2">
+        <h3 class="text-danger">Quản lý tài khoản</h3>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="" data-target="#edit">Chỉnh sửa</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link active" data-toggle="tab" href="" data-target="#list">Danh sách tài khoản</a>
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade" id="edit">
+                <div ng-include="'/assets/admin/account/_form-account.html'"></div>
+            </div>
+            <div class="tab-pane fade show active" id="list">
+                <div ng-include="'/assets/admin/account/_table-account.html'"></div>
+            </div>
+        </div>
+    </div>
+</div>

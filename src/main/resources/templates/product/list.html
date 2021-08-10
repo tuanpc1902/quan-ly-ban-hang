@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://themyleaf.org" th:replace="~{/layout/index :: dynamic(~{::body})}" lang="en">
+
+<body>
+    <div class="home__filter">
+        <span class="home__filter-lable">Sắp xếp theo</span>
+        <button class="home__filter__btn btn">Phổ biến</button>
+        <button class="home__filter__btn btn btn--primary">Mới
+            nhất</button>
+        <button class="home__filter__btn btn">Bán chạy</button>
+
+        <div class="select-input">
+            <span class="select-input__lable">Giá</span> <i class="select-input-icon fas fa-angle-down"></i>
+            <ul class="select-input__list">
+                <li class="select-input-item"><a href="#" class="select-input-link">Giá thấp đến cao</a>
+                </li>
+                <li class="select-input-item"><a href="#" class="select-input-link">Giá cap đến thấp</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="home__filter__page">
+            <span class="home__filter__page-num"> <span class="home__filter__page-current"></span>/
+            </span>
+
+            <div class="home__filter__page-control">
+                <a href="" class="home__filter__page-btn"> <i class="home__filter__page-icon fas fa-angle-left"></i>
+                </a>
+                <a href="" class="home__filter__page-btn"> <i class="home__filter__page-icon fas fa-angle-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="home__product">
+        <!-- Grid -> Row -> Column  -->
+        <div class="grid__row">
+            <div class="grid__column-2-4" th:each="p : ${items}">
+
+                <a th:href="@{|/product/detail/${p.id}|}" class="home__product-item" style="text-decoration: none;">
+                    <div class="home__product-item-img">
+                        <!-- th:style="'background-image: url(' + @{/img/img-product/${p.image}} + ')'" -->
+                        <img th:src="@{|/img/img-product/${p.image}|}" alt=""
+                            class="home__product-item-img img__product">
+                        <!-- th:src="@{|/img/img-product/${p.image}|}" -->
+                    </div>
+                    <h4 class="home__product-item-name" th:text="${p.name}"></h4>
+                    <div class="home__product-item-price">
+                        <span class="donvi_price">$</span>
+                        <span class="home__product-item-price-current"
+                            th:text="${#numbers.formatDecimal(p.price, 0, 'COMMA', 0, 'POINT')}"></span>
+                        <!-- VNĐ -->
+                    </div>
+                    <div class="home__product-item-action">
+                        <span class="home__product-item-like home__product-item-like--liked">
+                            <i class="far fa-heart home__product-item-like-icon-empty"></i>
+                            <i class="fas fa-heart home__product-item-like-icon-fill"></i>
+                        </span>
+                        <div class="home__product-item-rating">
+                            <i class="home__product-item-rating__start-gold fas fa-star"></i>
+                            <i class="home__product-item-rating__start-gold fas fa-star"></i>
+                            <i class="home__product-item-rating__start-gold fas fa-star"></i>
+                            <i class="home__product-item-rating__start-gold fas fa-star"></i>
+                            <i class=" fas fa-star"></i>
+                        </div>
+                        <span class="home__product-item__sold"></span>
+                    </div>
+                    <div class="home__product-item-origin">
+                        <span class="home__product-item-brand"></span> <span class="home__product-item-origin-name">TP.
+                            Hồ
+                            Chí
+                            Minh</span>
+                    </div>
+
+                    <div class="home__product-item-favorite">
+                        <i class="fas fa-check"></i> <span>Yêu thích</span>
+                    </div>
+                    <div class="home__product-item-sale-off">
+                        <span class="home__product-item-sale-off-percent">4%</span>
+                        <span class="home__product-item-sale-off-label">GIẢM</span>
+                    </div>
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+
+    <ul class="pagination home__product__pagination">
+        <li class="pagination__item"><a href="/index" class="pagination__item__link">
+                <i class="pagination__item__icon fas fa-angle-left"></i>
+            </a></li>
+        <!-- pagination__item--active -->
+        <li class="pagination__item"><a href="/index/?p=0" class="pagination__item__link">1</a></li>
+        <li class="pagination__item"><a href="/index/?p=1" class="pagination__item__link">2</a></li>
+        <li class="pagination__item"><a href="/index/?p=2" class="pagination__item__link">3</a></li>
+        <!-- <li class="pagination__item"><a href="" class="pagination__item__link">4</a></li> -->
+        <!-- <li class="pagination__item"><a href="#" class="pagination__item__link">5</a></li>
+									<li class="pagination__item"><a href="#" class="pagination__item__link">...</a></li>
+									<li class="pagination__item"><a href="#" class="pagination__item__link">14</a></li> -->
+        <li class="pagination__item"><a href="/" class="pagination__item__link">
+                <i class="pagination__item__icon fas fa-angle-right"></i>
+            </a></li>
+    </ul>
+</body>
+
+</html>

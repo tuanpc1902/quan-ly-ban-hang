@@ -1,0 +1,63 @@
+<div class="card">
+    <!-- <div class="card-header">
+        PRODUCT EDITION
+    </div> -->
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-3">
+                <img ng-src="{{'/assets/images/' + form.image}}" alt="" style="width: 100%">
+            </div>
+            <div class="col-sm-9">
+                <div class="form row">
+                    <div class="form-group col-sm-6">
+                        <label for="name">Tên sản phẩm</label>
+                        <input type="text" class="form-control" name="name" ng-model="form.name">
+                    </div>
+
+                    <div class="form-group col-sm-6">
+                        <label for="price">Giá</label>
+                        <input type="text" class="form-control" name="price" ng-model="form.price">
+                    </div>
+                </div>
+                <div class="form row">
+                    <div class="form-group col-sm-6">
+                        <label for="image">Ảnh</label>
+                        <input type="file" class="form-control" name="image" id="image" ng-model="form.image"
+                            onchange="angular.element(this).scope().imageChanged(this.files)">
+                    </div>
+
+                    <div class="form-group col-sm-6">
+                        <label for="Category">Loại sản phẩm</label>
+                        <select class="form-control form-control-sm" name="category" ng-model="form.category.id">
+                            <option ng-repeat="c in cates" ng-value="c.id">{{c.name}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form row">
+                    <div class="form-group col-sm-6">
+                        <label for="createDate">Ngày tạo</label>
+                        <input type="date" class="form-control" name="createDate" ng-model="form.createDate">
+                    </div>
+
+                    <div class="form-group col-sm-6">
+                        <label for="available">Có sẳn ? </label>
+                        <div class="form-control">
+                            <label class="radio-inline">
+                                <input type="radio" name="available" ng-model="form.available" ng-value="true"> Có
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" name="available" ng-model="form.available" ng-value="false"> Không
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer text-center">
+        <button ng-click="create()" class="btn btn-primary"><i class="fas fa-plus    "></i> Thêm mới</button>
+        <button ng-click="update()" class="btn btn-success"><i class="fas fa-save    "></i> Cập nhật</button>
+        <button ng-click="delete(form)" class="btn btn-danger"><i class="fas fa-trash    "></i> Xóa</button>
+        <button ng-click="reset()" class="btn btn-info"><i class="fas fa-refresh    "></i> Reset</button>
+    </div>
+</div>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/layout/index :: dynamic(~{::body})}" lang="en">
+
+<body>
+    <form th:action="@{/security/registration}" id="form__dangky" method="post">
+        <div class="auth-form">
+            <div class="auth-form__container">
+                <div class="auth-form__header">
+                    <h3 class="auth-form__heading">Đăng ký</h3>
+                    <!-- <a th:href="@{/security/login/form}" class="auth-form__switch-btn">Đăng nhập</a> -->
+                    <a href="" onclick="dangnhap()" class="auth-form__switch-btn">Đăng nhập</a>
+                </div>
+                <div class="auth-form__form">
+                    <div class="auth-form__group">
+                        <input type="text" class="auth-form__input" placeholder="Nhập user">
+                    </div>
+                    <div class="header__search" style="border: 1px solid #dbdbdb; margin-top: 20px; height: 40px;">
+                        <div class="header__search-input-wrap">
+                            <input type="password" id="showPass" class="header__search-input"
+                                placeholder="Nhập mật khẩu">
+                        </div>
+                        <a class="header__search-btn show_hide_pass" onclick="showPass()">
+                            <div class="icon_pass far fa-eye" id="show_pass"
+                                style="font-size: 1.8rem; line-height: 34px;">
+                            </div>
+                            <div class="icon_pass far fa-eye-slash" id="hide_pass"
+                                style="font-size: 1.8rem; line-height: 34px;">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="header__search" style="border: 1px solid #dbdbdb; margin-top: 20px; height: 40px;">
+                        <div class="header__search-input-wrap">
+                            <input type="password" id="showPassConfig" class="header__search-input"
+                                placeholder="Nhập lại mật khẩu">
+                        </div>
+                        <a class="header__search-btn show_hide_pass" onclick="showPassConfig()">
+                            <div class="icon_pass far fa-eye" id="show_pass_Config"
+                                style="font-size: 1.8rem; line-height: 34px;">
+                            </div>
+                            <div class="icon_pass far fa-eye-slash" id="hide_pass_Config"
+                                style="font-size: 1.8rem; line-height: 34px; display: none;">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="auth-form__group">
+                        <input type="email" class="auth-form__input" placeholder="Nhập email">
+                    </div>
+
+                    <div class="auth-form__group">
+                        <input type="file" style="align-items: center;" class="auth-form__input" placeholder="">
+                    </div>
+
+                    <div class="auth-form__aside">
+                        <p class="auth-form__policy-text">
+                            Bằng việc đăng kí, bạn đã đồng ý với F8 về
+                            <a href="" class="auth-form__text-link">Điều khoản dịch vụ</a> &
+                            <a href="" class="auth-form__text-link">chính sách bảo mật</a>
+                        </p>
+                    </div>
+                    <span class="__message__" th:text="${message}"></span>
+                    <div class="auth-form__control">
+                        <a onclick="closeModal()" class="btn auth-form__control-back btn--normal">TRỞ
+                            LẠI</a>
+                        <button class="btn btn--primary">ĐĂNG KÝ</button>
+                    </div>
+                </div>
+            </div>
+            <div class="auth-form__socials">
+                <a href="" class="btn auth-form__socials--facebook btn--size-s btn--with-icon">
+                    <i class="auth-form__socials-icon fa fa-facebook-square"></i>
+                    <span class="auth-form__socials-title">
+                        Kết nối với Facebook
+                    </span>
+                    <a href=""
+                        class="btn auth-form__socials--google auth-form__socials-icon btn--size-s btn--with-icon">
+                        <i class="auth-form__socials-icon fa fa-google"></i>
+                        <span class="auth-form__socials-title">
+                            Kết nối với Google
+                        </span>
+                    </a>
+            </div>
+        </div>
+    </form>
+</body>
+
+</html>

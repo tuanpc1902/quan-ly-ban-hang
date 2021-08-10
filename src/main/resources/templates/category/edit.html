@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/layout/index :: dynamic(~{::body})}">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Thể loại sản phẩm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="/view/assets/css/base.css">
+    <link rel="stylesheet" href="/view/assets/css/main.css">
+    <link rel="stylesheet" href="/view/assets/css/product.css">
+    <link rel="stylesheet" href="/view/assets/css/cart.css">
+    <link rel="stylesheet" href="/view/assets/css/edit.css">
+    <link rel="icon" href="/view/assets/img/logo.png" type="image/icon type" />
+    <link rel="stylesheet" href="/view/assets/fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap&subset=vietnamese">
+    <script src="/view/assets/js/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="app__container">
+            <div class="grid">
+                <div class="grid__row app__content">
+                    <div class="grid__column-2">
+                        <nav class="category">
+                            <h3 class="category__heading">Danh mục quản lý</h3>
+                            <ul class="category-list">
+                                <li class="category-item ">
+                                    <a href="/product" class="category-item__link">Sản phẩm</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="/category" class="category-item__link">Thể loại</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="/report/inventory" class="category-item__link">Thống kê tồn
+                                        kho</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="/account" class="category-item__link">Tài khoản</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="grid__column-10">
+                        <div class="container__edit" style="margin-bottom: 20px;">
+                            <div class="border__form" style="border: none; margin: 0px;">
+                                <form:form action="/category/edit" modelAttribute="item" class="form__edit">
+                                    <div class="header__edit">
+                                        <div class="edit__heading">
+                                            <h3 class="edit__title">Thêm mới, Chỉnh sửa thông tin loại sản
+                                                phẩm</h3>
+                                        </div>
+                                    </div>
+                                    <span class="category__input__name" style="font-size: 1.4rem;">
+                                        Category Id
+                                    </span> <br />
+                                    <form:input path="id" class="edit__input" style="margin-bottom: 10px;"
+                                        placeholder="Category Id?" />
+                                    <br />
+                                    <span class="category__input__name" style="font-size: 1.4rem;">
+                                        Category Name
+                                    </span> <br />
+                                    <form:input path="name" class="edit__input" placeholder="Category Name?" />
+                                    <br />
+                                    <button class="btn btn--primary" formaction="/category/create"
+                                        style="margin-right: 10px;">Thêm mới</button>
+                                    <button class="btn btn--primary" formaction="/category/update"
+                                        style="margin-right: 10px;">Cập
+                                        nhật</button>
+
+                                </form:form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+<nav class="category">
+    <h3 class="category__heading">Danh mục</h3>
+    <ul class="category-list">
+        <!-- category active -->
+        <li class="category-item">
+            <a th:href="@{|/index|}" class="category-item__link">Tất cả sản phẩm</a>
+        </li>
+        <li class="category-item" th:each="c : ${cates}">
+            <a th:href="@{|/product/list?cid=${c.id}|}" class="category-item__link">[[${c.name}]]</a>
+        </li>
+    </ul>
+</nav>

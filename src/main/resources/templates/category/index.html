@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{/layout/index :: dynamic(~{::body})}">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Thể loại sản phẩm</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="/view/assets/css/base.css">
+    <link rel="stylesheet" href="/view/assets/css/main.css">
+    <link rel="stylesheet" href="/view/assets/css/product.css">
+    <link rel="stylesheet" href="/view/assets/css/cart.css">
+    <link rel="icon" href="/view/assets/img/logo.png" type="image/icon type" />
+    <link rel="stylesheet" href="/view/assets/fontawesome-free-5.15.3-web/css/all.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap&subset=vietnamese">
+    <script src="/view/assets/js/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="app__container">
+            <div class="grid">
+                <div class="grid__row app__content">
+                    <div class="grid__column-2">
+                        <nav class="category">
+                            <h3 class="category__heading">Danh mục quản lý</h3>
+                            <ul class="category-list">
+                                <!-- <li class="category-item category-item--active">
+                                    <a href="#" class="category-item__link">Sản phẩm</a>
+                                </li> -->
+                                <li class="category-item ">
+                                    <a href="/product" class="category-item__link">Sản phẩm</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="/category" class="category-item__link">Thể loại</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="/report/inventory" class="category-item__link">Thống kê tồn kho</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="/account" class="category-item__link">Tài khoản</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="grid__column-10">
+                        <div class="boder-container">
+                            <div class="product__heading">
+                                <div class="quantity">
+                                    <h3 class="product__quantity">Loại sản phẩm</h3>
+                                </div>
+                                <a href="/category/edit" class="btn btn--primary btn__add"><i
+                                        class="fas fa-plus"></i>&nbsp;Thêm loại sản phẩm mới</a>
+
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="product__body">
+                            <div class="product__title">
+                                <table class="product__table">
+                                    <thead>
+                                        <tr class="table__th">
+                                            <th>ID</th>
+                                            <th>Loại sản phẩm</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody class="table__body">
+                                        <c:forEach var="item" items="${items}">
+                                            <tr class="table__tr">
+                                                <td>${item.id}</td>
+                                                <td>${item.name}</td>
+                                                <td class="table__edit">
+                                                    <a href="/category/edit/${item.id}"><i class="far fa-edit"
+                                                            title="Chỉnh sửa"></i></a>
+                                                    <a href="/category/delete/${item.id}"><i
+                                                            class="trash__icon far fa-trash-alt" title="Xóa"></i></a>
+                                                </td>
+                                            </tr>
+                                        </c:forEach>
+                                    </tbody>
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

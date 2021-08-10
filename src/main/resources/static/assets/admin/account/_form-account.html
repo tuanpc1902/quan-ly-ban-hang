@@ -1,0 +1,48 @@
+<div class="card">
+    <!-- <div class="card-header">
+        PRODUCT EDITION
+    </div> -->
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-3">
+                <img ng-src="{{'/assets/images/' + form.photo}}" alt="" style="width: 100%">
+            </div>
+            <div class="col-sm-9">
+                <div class="form row">
+                    <div class="form-group col-sm-6">
+                        <label for="username">Tên tài khoản</label>
+                        <input type="text" class="form-control" name="username" ng-model="form.username">
+                    </div>
+
+                    <div class="form-group col-sm-6">
+                        <label for="fullname">Họ và tên</label>
+                        <input type="text" class="form-control" name="fullname" ng-model="form.fullname">
+                    </div>
+                </div>
+                <div class="form row">
+                    <div class="form-group col-sm-6">
+                        <label for="password">Mật khẩu</label>
+                        <input type="password" class="form-control" name="password" ng-model="form.password">
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" name="email" ng-model="form.email">
+                    </div>
+                </div>
+                <div class="form row">
+                    <div class="form-group col-sm-6">
+                        <label for="photo">Ảnh</label>
+                        <input type="file" class="form-control" name="photo" id="photo" ng-model="form.photo"
+                            onchange="angular.element(this).scope().imageChanged(this.files)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer text-center">
+        <button ng-click="create()" id="create" class="btn btn-primary"><i class="fas fa-plus"></i> Thêm mới</button>
+        <button ng-click="update()" id="update" class="btn btn-success"><i class="fas fa-save"></i> Cập nhật</button>
+        <button ng-click="delete(form)" id="delete" class="btn btn-danger"><i class="fas fa-trash"></i> Xóa</button>
+        <button ng-click="reset()" id="reset" class="btn btn-info"><i class="fas fa-refresh"></i> Reset</button>
+    </div>
+</div>

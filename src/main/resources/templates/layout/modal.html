@@ -1,0 +1,130 @@
+<div class="modal" id="modal" style="display: none;">
+    <div class=" modal__overlay">
+    </div>
+    <div class="modal__body" id="modal__body">
+        <!-- Dang ky -->
+        <form th:action="@{/security/registration}" method="post">
+            <div class="auth-form" id="form__dangky">
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng ký</h3>
+                        <!-- <a th:href="@{/security/login/form}" class="auth-form__switch-btn">Đăng nhập</a> -->
+                        <a href="" onclick="dangnhap()" class="auth-form__switch-btn">Đăng nhập</a>
+                    </div>
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <input type="text" class="auth-form__input" placeholder="Nhập user">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Nhập mật khẩu">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" class="auth-form__input" placeholder="Nhập lại mật khẩu">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="text" class="auth-form__input" placeholder="Nhập email">
+                        </div>
+
+                        <div class="auth-form__group">
+                            <input type="file" class="auth-form__input" placeholder="">
+                        </div>
+
+                        <div class="auth-form__aside">
+                            <p class="auth-form__policy-text">
+                                Bằng việc đăng kí, bạn đã đồng ý với F8 về
+                                <a href="" class="auth-form__text-link">Điều khoản dịch vụ</a> &
+                                <a href="" class="auth-form__text-link">chính sách bảo mật</a>
+                            </p>
+                        </div>
+                        <span class="__message__" th:text="${message}"></span>
+                        <div class="auth-form__control">
+                            <a onclick="closeModal()" class="btn auth-form__control-back btn--normal">TRỞ
+                                LẠI</a>
+                            <button class="btn btn--primary">ĐĂNG KÝ</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="auth-form__socials">
+                    <a href="" class="btn auth-form__socials--facebook btn--size-s btn--with-icon">
+                        <i class="auth-form__socials-icon fa fa-facebook-square"></i>
+                        <span class="auth-form__socials-title">
+                            Kết nối với Facebook
+                        </span>
+                        <a href=""
+                            class="btn auth-form__socials--google auth-form__socials-icon btn--size-s btn--with-icon">
+                            <i class="auth-form__socials-icon fa fa-google"></i>
+                            <span class="auth-form__socials-title">
+                                Kết nối với Google
+                            </span>
+                        </a>
+                </div>
+            </div>
+        </form>
+        <!-- <div class="close__modal" id="close__modal">
+            <div class="close__icon">
+                <button href="" class="close__icon__link" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div> -->
+
+        <!-- Dang Nhap -->
+        <form th:action="@{/security/login}" method="post">
+            <div class="auth-form" id="form__dangnhap">
+                <div class="auth-form__container">
+                    <div class="auth-form__header">
+                        <h3 class="auth-form__heading">Đăng nhập</h3>
+                        <!-- <a th:href="@{/security/registration/form}" class="auth-form__switch-btn">Đăng ký</a> -->
+                        <!-- <a href="" onclick="dangky()" class="auth-form__switch-btn">Đăng ký</a> -->
+                    </div>
+                    <div class="auth-form__form">
+                        <div class="auth-form__group">
+                            <input type="text" name="username" class="auth-form__input" placeholder="Email của bạn">
+                        </div>
+                        <div class="auth-form__group">
+                            <input type="password" name="password" class="auth-form__input"
+                                placeholder="Mật khẩu của bạn">
+                        </div>
+                        <div class="auth-form__aside">
+                            <div class="auth-form__help">
+                                <a href="" class="auth-form__help-link auth-form__help-forgot">Quên mật khẩu
+                                </a>
+                                <span class="auth-form__help-sepatate"></span>
+                                <a href="" class="auth-form__help-link">Cần trợ giúp?</a>
+                            </div>
+                        </div>
+                        <span class="__message__" th:text="${message}"></span>
+                        <div class="auth-form__control">
+                            <a onclick="closeModal()" class="btn auth-form__control-back btn--normal">TRỞ
+                                LẠI</a>
+                            <button class="btn btn--primary">ĐĂNG NHẬP</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="auth-form__socials">
+                    <a href="/oauth2/authorization/facebook"
+                        class="btn auth-form__socials--facebook btn--size-s btn--with-icon">
+                        <i class="auth-form__socials-icon fa fa-facebook-square"></i>
+                        <span class="auth-form__socials-title">
+                            Kết nối với Facebook
+                        </span>
+                    </a>
+                    <a href="/oauth2/authorization/google"
+                        class="btn auth-form__socials--google auth-form__socials-icon btn--size-s btn--with-icon">
+                        <i class="auth-form__socials-icon fa fa-google"></i>
+                        <span class="auth-form__socials-title">
+                            Kết nối với Google
+                        </span>
+                    </a>
+                </div>
+                <div class="close__modal" id="close__modal">
+                    <div class="close__icon">
+                        <a class="close__icon__link" onclick="closeModal()">
+                            <i class="fas fa-times"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

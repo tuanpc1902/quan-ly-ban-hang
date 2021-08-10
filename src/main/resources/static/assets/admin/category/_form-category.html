@@ -1,0 +1,31 @@
+<div class="card">
+    <!-- <div class="card-header">
+        PRODUCT EDITION
+    </div> -->
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form row">
+                    <div class="form-group col-sm-6">
+                        <label for="id">ID</label>
+                        <input type="text" class="form-control" id="id" name="id" ng-model="form.id">
+                    </div>
+                </div>
+
+                <div class="form row">
+                    <div class="form-group col-sm-6">
+                        <label for="name">Tên loại sản phẩm</label>
+                        <input type="text" class="form-control" name="name" ng-model="form.name">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="card-footer text-center">
+        <button ng-click="create()" id="create" class="btn btn-primary"><i class="fas fa-plus"></i> Thêm mới</button>
+        <button ng-click="update()" id="update" class="btn btn-success"><i class="fas fa-save"></i> Cập nhật</button>
+        <button ng-click="delete(form)" id="delete" class="btn btn-danger"><i class="fas fa-trash"></i> Xóa</button>
+        <button ng-click="reset()" id="reset" class="btn btn-info"><i class="fas fa-refresh"></i> Reset</button>
+    </div>
+</div>

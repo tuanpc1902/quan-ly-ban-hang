@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://themyleaf.org" th:replace="~{/layout/index :: dynamic(~{::body})}" lang="en">
+
+<body>
+    <div class="detail" th:object="${item}">
+        <div class="grid__column-4">
+            <div class="home__product-item-img">
+                <img th:src="@{|/img/img-product/*{image}|}" alt="" class="img__product">
+            </div>
+        </div>
+        <div class="grid__column-6">
+            <div class="detail__heading">
+                <h3 class="detail__title" th:text="*{name}"></h3>
+            </div>
+            <div class="detail__body">
+                <div class="detail__brand">
+                    <span>Thể loại</span>
+                    <a href="" class=" brand" th:text="*{category.name}"></a>
+                </div>
+                <div class="detail__price">
+                    <!-- <span>Thương hiệu</span> -->
+                    <span class="price" th:text="*{price}"></span>
+                </div>
+            </div>
+            <div class="detail__footer">
+                <button th:attr="ng-click=@{|cart.add(${id})|}" class="btn btn--primary"><i class="fas fa-cart-plus"
+                        style="margin-right: 10px;"></i>Thêm
+                    Vào Giỏ Hàng</button>
+                <a th:attr="ng-click=@{|cart.add(${id})|}" th:href="@{/cart/view}" class="btn btn--primary">Mua Ngay</a>
+            </div>
+        </div>
+    </div>
+    <div class="line__category">
+        <span class="detail__title__category">Sản phẩm cùng loại</span>
+    </div>
+    <div class="home__product">
+        <!-- Grid -> Row -> Column  -->
+        <div class="grid__row">
+            <div class="grid__column-2-4" th:each=" p : ${item.category.products}">
+
+                <a th:href="@{|/product/detail/${p.id}|}" class="home__product-item" style="text-decoration: none;">
+                    <div class="home__product-item-img">
+                        <img th:src="@{|/img/img-product/${p.image}|}" alt="" class="img__product">
+                    </div>
+                    <h4 class="home__product-item-name" th:text="${p.name}"></h4>
+                    <div class="home__product-item-price">
+                        <span class="home__product-item-price-current"
+                            th:text="${#numbers.formatDecimal(p.price, 0, 'COMMA', 0, 'POINT')}"></span>
+                        VNĐ
+                    </div>
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

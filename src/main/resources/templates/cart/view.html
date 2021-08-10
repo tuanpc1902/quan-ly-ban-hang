@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://themyleaf.org" th:replace="~{/layout/index :: dynamic(~{::body})}" lang="en">
+
+<body>
+	<div class="container" th:fragment="shopping_cart">
+		<div class="grid">
+			<div class="grid__row">
+				<div class="cart__body">
+					<div class="cart__product">
+						<h3 class="cart-title">Giỏ hàng của bạn</h3>
+						<table class="cart__table">
+							<tr class="cart-table__th table__th">
+								<th>Id</th>
+								<th>Ảnh</th>
+								<th>Tên sản phẩm</th>
+								<th>Giá</th>
+								<th>Số lượng</th>
+								<th>Số tiền</th>
+								<th><i class="fas fa-exclamation-circle"></i></th>
+
+							</tr>
+							<tbody class="table__body">
+								<!-- <form action="/cart/update/${item.id}" method="post"> -->
+								<!-- <input type="hidden" name="id" value="${item.id}"> -->
+								<tr ng-repeat="item in cart.items">
+									<td>{{item.id}}</td>
+									<td style="text-align: center; width: 10%">
+										<img th:src="@{${'/img/img-product/' + '{{item.image}}'}}" class="__cart-img">
+									</td>
+									<td style="width: 40%;">{{item.name}}</td>
+									<td>{{item.price | number : 0}}</td>
+									<!-- onblur="this.form.submit()" -->
+									<td><input name="qty" type="number" min="1" ng-change="cart.saveToLocalStorage();"
+											ng-model="item.qty" style="width:50px;"></td>
+									<td>{{item.qty*item.price | number : 0}}</td>
+									<td style="width: 10%;">
+										<a href="" class="cart-link" ng-click="cart.remove(item.id)"><i
+												class="trash__icon__cart far fa-trash-alt" title="Xóa"></i></a>
+									</td>
+								</tr>
+								<!-- </form> -->
+							</tbody>
+						</table>
+						<span class="total__money" style="float: right;">
+							<span style="font-weight: 500;">Tổng tiền: </span><span class="tong__tien">{{cart.amount |
+								number : 0}}</span>
+							đồng
+						</span>
+					</div>
+				</div>
+				<div class="cart__link">
+					<div class="cart__link-pay">
+						<button class="btn btn--primary btn-hover" style="margin-right: 20px;"
+							ng-click="cart.clear();"><i class="fas fa-trash"></i>&nbsp;Xóa
+							Giỏ
+							Hàng</button>
+						<a class="btn btn--primary btn-hover" style="margin-right: 20px;" href="/product/list"><i
+								class="fas fa-plus"></i>&nbsp;Mua
+							Thêm</a>
+
+						<a class="btn btn--primary btn-hover" th:href="@{/order/checkout}"><i
+								class="fas fa-shopping-cart"></i>&nbsp;Xuất</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

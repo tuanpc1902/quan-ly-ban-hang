@@ -1,0 +1,42 @@
+<div class="panel panel-default">
+    <!-- <div class="panel-heading">PRODUCT LIST</div> -->
+    <table class="table table-light">
+        <thead class="thead-light">
+            <tr class="text-center">
+                <th>Tên tài khoản</th>
+                <th>Mật khẩu</th>
+                <th>Họ và tên</th>
+                <th>Email</th>
+                <th>Ảnh</th>
+                <th class="text-center"><i class="fas fa-radiation-alt"></i></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="text-center" ng-repeat="acc in pager.accounts">
+                <td>{{acc.username}}</td>
+                <td>{{acc.password}}</td>
+                <td>{{acc.fullname}}</td>
+                <td>{{acc.email}}</td>
+                <td>{{acc.photo}}</td>
+                <td class="text-center" style="width: 10%;">
+                    <div class="btn-group btn-group-xs">
+                        <button ng-click="edit(acc)" class="btn btn-warning">
+                            <i class="far fa-edit"></i>
+                        </button>
+                        <button ng-click="delete(acc)" class="btn btn-danger">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="panel-footer text-center">
+        <button ng-click="pager.first()" class="btn btn-success"><i class="fas fa-arrow-alt-circle-up"></i></button>
+        <button ng-click="pager.prev()" class="btn btn-warning"><i class="fas fa-arrow-circle-left"></i></button>
+        <button class="btn btn-primary">{{pager.page + 1}} of {{pager.count}}</button>
+        <button ng-click="pager.next()" class="btn btn-warning"><i class="fas fa-arrow-circle-right"></i></button>
+        <button ng-click="pager.last()" class="btn btn-success"><i class="fas fa-arrow-alt-circle-down"></i></button>
+
+    </div>
+</div>

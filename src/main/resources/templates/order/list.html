@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://themyleaf.org" th:replace="~{/layout/index :: dynamic(~{::body})}" lang="en">
+
+<body>
+    <main>
+        <div class="card border-info">
+            <div class="cart-title">
+                Đơn hàng đã đặt
+            </div>
+            <div class="card-body p-0">
+                <table class="cart__table">
+                    <thead class="thead-light">
+                        <tr class="cart-table__th table__th">
+                            <th>No.</th>
+                            <th>Order No.</th>
+                            <th>Order Date</th>
+                            <th>Shipping Address</th>
+                            <th><i class="fas fa-radiation"></i></th>
+                        </tr>
+                    </thead>
+                    <tbody class="table__body" th:each="order, state : ${orders}">
+                        <tr>
+                            <td>[[${state.index}]]</td>
+                            <td>[[${order.id}]]</td>
+                            <td style="width: 10%;">[[${order.createDate}]]</td>
+                            <td>[[${order.address}]]</td>
+                            <td style="text-decoration: none; color: #000" class="text-center">
+                                <a style="width: 100%;" class="cart-link" th:href="@{|/order/detail/${order.id}|}">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

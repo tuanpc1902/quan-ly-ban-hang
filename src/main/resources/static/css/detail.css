@@ -1,0 +1,52 @@
+.detail {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* .detail__heading {
+} */
+
+.detail__title {
+  width: 100%;
+  font-size: 2rem;
+  line-height: 26px;
+  justify-content: center;
+}
+
+.detail__title__category {
+  font-size: 1.8rem;
+  width: 100%;
+  font-weight: 500;
+}
+
+.detail__body {
+  width: 100%;
+}
+.detail__brand span {
+  font-size: 1.3rem;
+}
+
+.detail__brand .brand {
+  font-size: 1.5rem;
+  color: #1877f2;
+}
+
+.detail__brand a {
+  text-decoration: none;
+}
+
+.detail__price {
+  width: 100%;
+  padding: 20px 0;
+}
+
+.detail__price .price {
+  font-size: 2.6rem;
+}
+
+.line__category {
+  border-bottom: 2px solid var(--primary-color);
+  padding: 5px 0px;
+}

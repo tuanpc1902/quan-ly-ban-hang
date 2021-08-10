@@ -1,0 +1,57 @@
+.cart__body {
+  width: 100%;
+}
+
+.cart__product {
+  width: 100%;
+  /* margin: 20px 0; */
+}
+
+.cart-title {
+  font-size: 2rem;
+}
+
+.cart__table {
+  width: 100%;
+  text-align: center;
+}
+.cart-table__th th {
+  font-size: 1.6rem;
+  font-family: 500;
+  padding: 8px;
+}
+.cart-link {
+  text-decoration: none;
+}
+
+.cart__link {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.cart__link .cart__link-pay {
+  float: right;
+}
+
+.btn .btn--primary .btn-hover:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.trash__icon__cart {
+  color: red;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.total__money {
+  float: right;
+  margin: 10px 10px 10px 0px;
+  font-size: 1.6rem;
+  padding: 10px;
+}
+
+.tong__tien {
+  font-weight: 600;
+  color: #f6402e;
+}

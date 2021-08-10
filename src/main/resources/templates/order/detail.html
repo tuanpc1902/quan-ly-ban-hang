@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://themyleaf.org" th:replace="~{/layout/index :: dynamic(~{::body})}" lang="en">
+
+<body>
+    <main th:object="${order}">
+        <div class="row">
+            <div class="grid__column-4">
+                <div class="card border-info w-100">
+                    <h3 class="cart-title">Thông tin đặt hàng</h3>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="form-group col-sm-4">
+                                <h3 class="title__checkout">Số đơn hàng</h3>
+                                <input type="text" class="input__checkout" readonly th:field="*{id}">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <h3 class="title__checkout">Người mua</h3>
+                                <input type="text" class="input__checkout" readonly th:field="*{account.username}">
+                            </div>
+                            <div class="form-group col-sm-4">
+                                <h3 class="title__checkout">Ngày mua</h3>
+                                <input type="text" class="input__checkout" readonly th:field="*{createDate}">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-12">
+                                <h3 class="title__checkout" id="title__address">Địa chỉ giao hàng</h3>
+                                <textarea class="address_checkout" disabled readonly th:field="*{address}"
+                                    rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="card mt-2 border-info w-100">
+                <h3 class="title__checkout" id="title__address">Đơn hàng</h3>
+                <div class="card-body p-0">
+                    <table class="cart__table">
+                        <tr class="cart-table__th table__th">
+                            <th>Id</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                            <th>Số tiền</th>
+
+                        </tr>
+                        <tbody class="table__body">
+                            <!-- <form action="/cart/update/${item.id}" method="post"> -->
+                            <!-- <input type="hidden" name="id" value="${item.id}"> -->
+                            <tr th:each="detail : *{orderDetails}" th:object="${detail}">
+                                <td>[[*{product.id}]]</td>
+                                <td style="width: 40%;">[[*{product.name}]]</td>
+                                <td>$[[*{#numbers.formatDecimal(price, 0, 'COMMA', 2,
+                                    'POINT')}]]</td>
+                                <!-- onblur="this.form.submit()" -->
+                                <td>[[*{quantity}]]</td>
+                                <td>[[*{#numbers.formatDecimal(price*quantity,
+                                    0,'COMMA',2,'POINT')}]]</td>
+                            </tr>
+                            <!-- </form> -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

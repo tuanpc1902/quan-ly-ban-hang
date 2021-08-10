@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://themyleaf.org" th:fragment="dynamic(view)" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopee - TuanPC</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" th:href="@{/css/base.css}" />
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
+    <link rel="stylesheet" th:href="@{/css/product.css}">
+    <link rel="stylesheet" th:href="@{/css/detail.css}">
+    <link rel="stylesheet" th:href="@{/css/cart.css}">
+    <link rel="stylesheet" th:href="@{/css/checkout.css}">
+    <link rel="icon" th:href="@{/img/logo.png}" type="image/icon type" />
+    <link rel="stylesheet" th:href="@{/fontawesome-free-5.15.3-web/css/all.min.css}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap&subset=vietnamese">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!-- Router -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+</head>
+
+<body ng-app="shopping-cart-app" ng-controller="shopping-cart-ctrl">
+    <div class="app">
+        <!-- header -->
+
+        <div th:replace="/layout/header.html"></div>
+
+        <!-- container -->
+        <div class="app__container">
+            <div class="grid">
+                <div class="grid__row app__content">
+                    <div class="grid__column-2">
+                        <div th:replace="/layout/category.html"></div>
+                    </div>
+                    <div class="grid__column-10">
+                        <div th:replace="${view}"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <div th:replace="/layout/footer.html"></div>
+        <div th:replace="/layout/modal.html" onkeydown="keyCode(event)"></div>
+    </div>
+    <script th:src="@{/js/main.js}"></script>
+    <script th:src="@{/js/shopping-cart-app.js}"></script>
+</body>
+
+</html>

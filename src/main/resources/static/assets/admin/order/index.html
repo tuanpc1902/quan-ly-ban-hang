@@ -1,0 +1,27 @@
+<div class="card">
+    <div class="container mt-2 mb-2">
+        <h3 class="text-danger">Đơn hàng</h3>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <!-- <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="" data-target="#edit">Chỉnh sửa</a>
+            </li> -->
+            <li class="nav-item active">
+                <a class="nav-link active" data-toggle="tab" href="" data-target="#list">Danh sách đơn hàng</a>
+            </li>
+            <!-- <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="" data-target="#list">Chi tiết đơn hàng</a>
+            </li> -->
+        </ul>
+        <div class="tab-content">
+            <!-- <div class="tab-pane fade" id="edit">
+                <div ng-include="'/assets/admin/order/_form-order.html'"></div>
+            </div> -->
+            <div class="tab-pane fade show active" id="list">
+                <div ng-include="'/assets/admin/order/_table-order.html'"></div>
+            </div>
+            <!-- <div class="tab-pane fade show active" id="list">
+                <div ng-include="'/assets/admin/order/_detail-order.html'"></div>
+            </div> -->
+        </div>
+    </div>
+</div>
