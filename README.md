@@ -1,6 +1,6 @@
 # quan-ly-ban-hang
 
-- Đầu tiên tìm đến đường dẫn C:\Users\tuanp\Desktop\github\quan-ly-ban-hang\quan-ly-ban-hang\src\main\resources\database để chạy database.
+- Đầu tiên tìm thư mục 'src\main\resources\database' để chạy database.
 - Import code vào Eclipse sau nó chạy với trình duyện với localhost:8080/index để đến trang người dùng, localhost:8080/admin để đến trang quản lý dành cho admin.
 
 Các chức năng bao gồm:
